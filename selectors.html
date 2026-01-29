@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title > CSS Selector forms</title>
+        <style>
+            /* 1.SIMPLE SELECTORS*/
+            /*element selector*/
+            p {
+                color: blue;
+            }
+            /*ID selctor*/
+            #mainTitle {
+                color : darkred;
+                font-size:28px;
+            }
+            /*class Seletor*/
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+            /*group selector*/
+            h2,h3 {
+                color:green;
+            }
+            /*universsal selector*/
+            * {
+                font-family : Arial,sans-serif;
+            }
+            *
+            /*2.COMBINATOR SELECTOR*/
+            /*descendant selector*/
+            div p{
+                color:purple;
+            }
+            /*child-selector*/
+            div > span {
+                color:orange;
+            }
+            /*adjacent sibling selector*/
+            h2 + p{
+                background-color:lightgrey
+            }
+            /*sibling selctor*/
+            h2 ~ p{
+                color: blue;
+            }
+            /*PSEUDO-class selectors*/
+            a:hover {
+                color:red;
+            }
+            li:first-child {
+                color:darkblue;
+            }
+            /* PSEUDO-ELEMENT SELECTOR*/
+            p ::firstletter {
+                font-size :25px;
+                color:red;
+            }
+            p::after {
+                content : "*";
+                color:green;
+            }
+            /*ATTRIBUTE SELECTOR*/
+            input[type="text"] {
+                border: 1px solid blue;
+                padding:5px;
+            }
+            input[type="password"] {
+                border : 2px solid red;
+                padding : 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id = "mainTitle">CSS Selector forms</h1>
+        <p>this is example selector</p>
+        <p class=highlight>this is class selctor example</p>
+        <h2>Group selctor headding</h2>
+        <h3>another groupp selector headding</h3>
+
+        <div>
+        <p>This is para inside div(descendant selector) </p>
+        <span>This is direct child span(child selector)</span>
+        </div>
+        <h2>this is adjacent headding</h2>
+        <p>this was effected by adjacent sibling selector</p>
+
+        <h3>general sibling headding</h3>
+        <p>this paragraph is genral sibling</p>
+        <p>this is also a general sibling</p>
+
+        <h3>Pseudo class example</h3>
+        <a href ="#">Hover over this link</a>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+
+        <h3>Attribute selector example</h3>
+        <form>
+            Username : <input type="text" name="username"><br><br>
+            Password : <input type="password" name="password"><br><br>
+        </form>
+    </body>
+</html>
