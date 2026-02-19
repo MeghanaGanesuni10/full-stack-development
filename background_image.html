@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            BackGround image example
-        </title>
-        <style>
-            body{
-                background-image: url("image.jpg");
-                background-repeat: no-repeat;
-                background-position: center 50%;
-                background-attachment:fixed;
-                background-size :300px;
-            }
+<head>
+    <title>Background image example</title>
+    <style>
+        body{
+            margin: 0;
+            min-height: 200vh; /* makes page scrollable */
+            position: relative;
+        }
 
-        </style>
-    </head>
-    <body>
-        <h1>Scroll the page</h1>
-        <p>content goes here.....</p>
-        <p style = "height :1500px;"></p>
-    </body>
+        body::before{
+            content: "";
+            position: fixed;              /* stays in place when scrolling */
+            top: 50%;                     /* halfway down the page */
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg); /* center + tilt */
+
+            width: 300px;
+            height: 300px;
+
+            background-image: url("image.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            pointer-events: none;         /* allows clicking through */
+            z-index: -1;                  /* keeps it behind content */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Scroll the page</h1>
+    <p>Content goes here.....</p>
+    <p style="height:1500px;"></p>
+</body>
 </html>
